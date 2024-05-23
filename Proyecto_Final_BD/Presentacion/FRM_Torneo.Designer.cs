@@ -172,6 +172,7 @@
             this.button3.Text = "Eliminar";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btn_LimpiarTorneo
             // 
@@ -187,6 +188,7 @@
             this.btn_LimpiarTorneo.Text = "Limpiar";
             this.btn_LimpiarTorneo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_LimpiarTorneo.UseVisualStyleBackColor = false;
+            this.btn_LimpiarTorneo.Click += new System.EventHandler(this.btn_LimpiarTorneo_Click);
             // 
             // btn_GuardarTorneo
             // 
@@ -202,6 +204,7 @@
             this.btn_GuardarTorneo.Text = "Guardar";
             this.btn_GuardarTorneo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_GuardarTorneo.UseVisualStyleBackColor = false;
+            this.btn_GuardarTorneo.Click += new System.EventHandler(this.btn_GuardarTorneo_Click);
             // 
             // txt_NombreTorneo
             // 
@@ -238,6 +241,7 @@
             this.btn_SalirPresentacion.Text = "Salir";
             this.btn_SalirPresentacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SalirPresentacion.UseVisualStyleBackColor = false;
+            this.btn_SalirPresentacion.Click += new System.EventHandler(this.btn_SalirPresentacion_Click);
             // 
             // dgvTorneo
             // 
@@ -254,6 +258,7 @@
             this.dgvTorneo.RowTemplate.Height = 28;
             this.dgvTorneo.Size = new System.Drawing.Size(1510, 439);
             this.dgvTorneo.TabIndex = 50;
+            this.dgvTorneo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTorneo_CellClick);
             // 
             // lbl_NombreTorneo
             // 
@@ -318,6 +323,7 @@
             this.Controls.Add(this.lbl_UbicacionTorneo);
             this.Name = "FRM_Torneo";
             this.Text = "FRM_Torneo";
+            this.Load += new System.EventHandler(this.FRM_Torneo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTorneo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

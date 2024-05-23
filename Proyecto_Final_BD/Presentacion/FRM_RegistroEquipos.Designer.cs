@@ -162,6 +162,7 @@
             this.btnLimpiarEquipos.Text = "Limpiar";
             this.btnLimpiarEquipos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLimpiarEquipos.UseVisualStyleBackColor = false;
+            this.btnLimpiarEquipos.Click += new System.EventHandler(this.btnLimpiarEquipos_Click);
             // 
             // btnEliminarEquipos
             // 
@@ -177,6 +178,7 @@
             this.btnEliminarEquipos.Text = "Eliminar";
             this.btnEliminarEquipos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminarEquipos.UseVisualStyleBackColor = false;
+            this.btnEliminarEquipos.Click += new System.EventHandler(this.btnEliminarEquipos_Click);
             // 
             // lbl_EquipoVisitan
             // 
@@ -204,6 +206,7 @@
             this.btn_GuardarEquipos.Text = "Guardar";
             this.btn_GuardarEquipos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_GuardarEquipos.UseVisualStyleBackColor = false;
+            this.btn_GuardarEquipos.Click += new System.EventHandler(this.btn_GuardarEquipos_Click);
             // 
             // txt_IdTorneo
             // 
@@ -249,6 +252,7 @@
             this.btn_SalirPresentacion.Text = "Salir";
             this.btn_SalirPresentacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SalirPresentacion.UseVisualStyleBackColor = false;
+            this.btn_SalirPresentacion.Click += new System.EventHandler(this.btn_SalirPresentacion_Click);
             // 
             // dgvRegistroEquipos
             // 
@@ -264,6 +268,7 @@
             this.dgvRegistroEquipos.RowTemplate.Height = 28;
             this.dgvRegistroEquipos.Size = new System.Drawing.Size(1186, 385);
             this.dgvRegistroEquipos.TabIndex = 133;
+            this.dgvRegistroEquipos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroEquipos_CellClick);
             // 
             // lbl_TorneoPrograma
             // 
@@ -316,6 +321,7 @@
             this.Controls.Add(this.lbl_Equipo);
             this.Name = "FRM_RegistroEquipos";
             this.Text = "FRM_RegistroEquipos";
+            this.Load += new System.EventHandler(this.FRM_RegistroEquipos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroEquipos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

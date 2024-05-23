@@ -67,7 +67,6 @@
             this.label4.Size = new System.Drawing.Size(537, 28);
             this.label4.TabIndex = 153;
             this.label4.Text = "R E G I S T R O   J U G A D O R E S\r\n";
-   
             // 
             // lbl_Genero
             // 
@@ -80,7 +79,6 @@
             this.lbl_Genero.TabIndex = 152;
             this.lbl_Genero.Text = "Género";
             this.lbl_Genero.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            
             // 
             // cbo_Genero_Jugador
             // 
@@ -90,7 +88,6 @@
             this.cbo_Genero_Jugador.Name = "cbo_Genero_Jugador";
             this.cbo_Genero_Jugador.Size = new System.Drawing.Size(190, 32);
             this.cbo_Genero_Jugador.TabIndex = 151;
-
             // 
             // lbl_EquipoActivo
             // 
@@ -134,7 +131,6 @@
             this.label3.TabIndex = 148;
             this.label3.Text = "Apellido";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-
             // 
             // btnModificarJugador
             // 
@@ -150,7 +146,7 @@
             this.btnModificarJugador.Text = "Limpiar";
             this.btnModificarJugador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnModificarJugador.UseVisualStyleBackColor = false;
-
+            this.btnModificarJugador.Click += new System.EventHandler(this.btnModificarJugador_Click);
             // 
             // btnEliminarJugador
             // 
@@ -166,7 +162,7 @@
             this.btnEliminarJugador.Text = "Eliminar";
             this.btnEliminarJugador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminarJugador.UseVisualStyleBackColor = false;
-    
+            this.btnEliminarJugador.Click += new System.EventHandler(this.btnEliminarJugador_Click);
             // 
             // txt_Id_Jugador
             // 
@@ -177,7 +173,6 @@
             this.txt_Id_Jugador.Size = new System.Drawing.Size(54, 35);
             this.txt_Id_Jugador.TabIndex = 145;
             this.txt_Id_Jugador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-
             // 
             // txt_Equipo
             // 
@@ -188,7 +183,6 @@
             this.txt_Equipo.Size = new System.Drawing.Size(54, 35);
             this.txt_Equipo.TabIndex = 144;
             this.txt_Equipo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-
             // 
             // txt_CorreoJugador
             // 
@@ -199,7 +193,6 @@
             this.txt_CorreoJugador.Size = new System.Drawing.Size(190, 35);
             this.txt_CorreoJugador.TabIndex = 133;
             this.txt_CorreoJugador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-
             // 
             // label2
             // 
@@ -212,7 +205,6 @@
             this.label2.TabIndex = 143;
             this.label2.Text = "Telefono";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-
             // 
             // label1
             // 
@@ -225,7 +217,6 @@
             this.label1.TabIndex = 142;
             this.label1.Text = "Correo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-
             // 
             // lbl_EquipoVisitan
             // 
@@ -238,7 +229,6 @@
             this.lbl_EquipoVisitan.TabIndex = 141;
             this.lbl_EquipoVisitan.Text = "Edad";
             this.lbl_EquipoVisitan.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-
             // 
             // lbl_TorneoPrograma
             // 
@@ -251,7 +241,6 @@
             this.lbl_TorneoPrograma.TabIndex = 140;
             this.lbl_TorneoPrograma.Text = "ID Equipo";
             this.lbl_TorneoPrograma.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-
             // 
             // lbl_HoraPrograma
             // 
@@ -264,7 +253,6 @@
             this.lbl_HoraPrograma.TabIndex = 139;
             this.lbl_HoraPrograma.Text = "Nombre";
             this.lbl_HoraPrograma.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-
             // 
             // lbl_EquipoLocal
             // 
@@ -277,7 +265,6 @@
             this.lbl_EquipoLocal.TabIndex = 138;
             this.lbl_EquipoLocal.Text = "Documento";
             this.lbl_EquipoLocal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-
             // 
             // lbl_IdPrograma
             // 
@@ -290,7 +277,6 @@
             this.lbl_IdPrograma.TabIndex = 137;
             this.lbl_IdPrograma.Text = "ID Jugador";
             this.lbl_IdPrograma.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-
             // 
             // btn_GuardarTorneo
             // 
@@ -306,7 +292,7 @@
             this.btn_GuardarTorneo.Text = "Guardar";
             this.btn_GuardarTorneo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_GuardarTorneo.UseVisualStyleBackColor = false;
-
+            this.btn_GuardarTorneo.Click += new System.EventHandler(this.btn_GuardarTorneo_Click);
             // 
             // btn_SalirPresentacion
             // 
@@ -322,7 +308,7 @@
             this.btn_SalirPresentacion.Text = "Salir";
             this.btn_SalirPresentacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SalirPresentacion.UseVisualStyleBackColor = false;
-
+            this.btn_SalirPresentacion.Click += new System.EventHandler(this.btn_SalirPresentacion_Click);
             // 
             // dgvRegistroJugador
             // 
@@ -339,7 +325,7 @@
             this.dgvRegistroJugador.RowTemplate.Height = 28;
             this.dgvRegistroJugador.Size = new System.Drawing.Size(1587, 510);
             this.dgvRegistroJugador.TabIndex = 134;
-
+            this.dgvRegistroJugador.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroJugador_CellClick);
             // 
             // txt_TeleJugador
             // 
@@ -350,7 +336,6 @@
             this.txt_TeleJugador.Size = new System.Drawing.Size(190, 35);
             this.txt_TeleJugador.TabIndex = 132;
             this.txt_TeleJugador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-
             // 
             // txt_NombreJugador
             // 
@@ -361,7 +346,6 @@
             this.txt_NombreJugador.Size = new System.Drawing.Size(190, 35);
             this.txt_NombreJugador.TabIndex = 128;
             this.txt_NombreJugador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-
             // 
             // txt_DocumentoJugador
             // 
@@ -372,7 +356,6 @@
             this.txt_DocumentoJugador.Size = new System.Drawing.Size(190, 35);
             this.txt_DocumentoJugador.TabIndex = 130;
             this.txt_DocumentoJugador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-      
             // 
             // txt_EdadJugador
             // 
@@ -383,7 +366,6 @@
             this.txt_EdadJugador.Size = new System.Drawing.Size(190, 35);
             this.txt_EdadJugador.TabIndex = 131;
             this.txt_EdadJugador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
- 
             // 
             // FRM_RegistroJugador
             // 
@@ -418,6 +400,7 @@
             this.Controls.Add(this.txt_EdadJugador);
             this.Name = "FRM_RegistroJugador";
             this.Text = "FRM_RegistroJugador";
+            this.Load += new System.EventHandler(this.FRM_RegistroJugador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroJugador)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

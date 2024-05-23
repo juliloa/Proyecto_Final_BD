@@ -62,6 +62,7 @@
             this.btn_GuardarPosiciones.Text = "Guardar";
             this.btn_GuardarPosiciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_GuardarPosiciones.UseVisualStyleBackColor = false;
+            this.btn_GuardarPosiciones.Click += new System.EventHandler(this.btn_GuardarPosiciones_Click);
             // 
             // dgv_Posiciones
             // 
@@ -172,6 +173,7 @@
             this.btn_SalirPresentacion.Text = "Salir";
             this.btn_SalirPresentacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SalirPresentacion.UseVisualStyleBackColor = false;
+            this.btn_SalirPresentacion.Click += new System.EventHandler(this.btn_SalirPresentacion_Click);
             // 
             // txt_id_Posicion
             // 
@@ -234,6 +236,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FRM_Posiciones";
             this.Text = "FRM_Posiciones";
+            this.Load += new System.EventHandler(this.FRM_Posiciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Posiciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

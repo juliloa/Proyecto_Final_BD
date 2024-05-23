@@ -153,6 +153,7 @@
             this.btnEliminarProgramacion.Text = "Eliminar";
             this.btnEliminarProgramacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminarProgramacion.UseVisualStyleBackColor = false;
+            this.btnEliminarProgramacion.Click += new System.EventHandler(this.btnEliminarProgramacion_Click);
             // 
             // btnLimpiarProgramacion
             // 
@@ -168,6 +169,7 @@
             this.btnLimpiarProgramacion.Text = "Limpiar";
             this.btnLimpiarProgramacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLimpiarProgramacion.UseVisualStyleBackColor = false;
+            this.btnLimpiarProgramacion.Click += new System.EventHandler(this.btnLimpiarProgramacion_Click);
             // 
             // txt_UbicacionPrograma
             // 
@@ -193,6 +195,7 @@
             this.btn_GuardarTorneo.Text = "Guardar";
             this.btn_GuardarTorneo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_GuardarTorneo.UseVisualStyleBackColor = false;
+            this.btn_GuardarTorneo.Click += new System.EventHandler(this.btn_GuardarTorneo_Click);
             // 
             // txt_IdPrograma
             // 
@@ -218,6 +221,7 @@
             this.btn_SalirPresentacion.Text = "Salir";
             this.btn_SalirPresentacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SalirPresentacion.UseVisualStyleBackColor = false;
+            this.btn_SalirPresentacion.Click += new System.EventHandler(this.btn_SalirPresentacion_Click);
             // 
             // dgvProgramacion
             // 
@@ -233,6 +237,7 @@
             this.dgvProgramacion.RowTemplate.Height = 28;
             this.dgvProgramacion.Size = new System.Drawing.Size(1566, 383);
             this.dgvProgramacion.TabIndex = 135;
+            this.dgvProgramacion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProgramacion_CellClick);
             // 
             // lbl_FechaPrograma
             // 
@@ -309,6 +314,7 @@
             this.Controls.Add(this.lbl_IdPrograma);
             this.Name = "FRM_Programacion";
             this.Text = "FRM_Programacion";
+            this.Load += new System.EventHandler(this.FRM_Programacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProgramacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

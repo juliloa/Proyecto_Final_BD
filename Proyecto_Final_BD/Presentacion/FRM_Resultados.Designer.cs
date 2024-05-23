@@ -160,6 +160,7 @@
             this.btnLimpiarResultados.Text = "Limpiar";
             this.btnLimpiarResultados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLimpiarResultados.UseVisualStyleBackColor = false;
+            this.btnLimpiarResultados.Click += new System.EventHandler(this.btnLimpiarResultados_Click);
             // 
             // btnEliminarResultados
             // 
@@ -175,6 +176,7 @@
             this.btnEliminarResultados.Text = "Eliminar";
             this.btnEliminarResultados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminarResultados.UseVisualStyleBackColor = false;
+            this.btnEliminarResultados.Click += new System.EventHandler(this.btnEliminarResultados_Click);
             // 
             // btn_GuardarResultados
             // 
@@ -191,6 +193,7 @@
             this.btn_GuardarResultados.Text = "Guardar";
             this.btn_GuardarResultados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_GuardarResultados.UseVisualStyleBackColor = false;
+            this.btn_GuardarResultados.Click += new System.EventHandler(this.btn_GuardarResultados_Click);
             // 
             // btn_SalirPresentacion
             // 
@@ -206,6 +209,7 @@
             this.btn_SalirPresentacion.Text = "Salir";
             this.btn_SalirPresentacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SalirPresentacion.UseVisualStyleBackColor = false;
+            this.btn_SalirPresentacion.Click += new System.EventHandler(this.btn_SalirPresentacion_Click);
             // 
             // txt_Evento_Destacado
             // 
@@ -260,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1707, 696);
+            this.ClientSize = new System.Drawing.Size(1707, 733);
             this.Controls.Add(this.nud_Marcador_Visitante);
             this.Controls.Add(this.nup_Marcador_Local);
             this.Controls.Add(this.label1);
@@ -282,6 +286,7 @@
             this.Controls.Add(this.txt_id_Resultado);
             this.Name = "FRM_Resultados";
             this.Text = "FRM_Resultados";
+            this.Load += new System.EventHandler(this.FRM_Resultados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nud_Marcador_Visitante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nup_Marcador_Local)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Resultados)).EndInit();

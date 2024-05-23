@@ -59,7 +59,6 @@
             this.btn_Cargar_Historial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cargar_Historial.Font = new System.Drawing.Font("SimSun", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cargar_Historial.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_Cargar_Historial.Image = ((System.Drawing.Image)(resources.GetObject("btn_Cargar_Historial.Image")));
             this.btn_Cargar_Historial.Location = new System.Drawing.Point(334, 603);
             this.btn_Cargar_Historial.Name = "btn_Cargar_Historial";
             this.btn_Cargar_Historial.Size = new System.Drawing.Size(177, 46);
@@ -67,6 +66,7 @@
             this.btn_Cargar_Historial.Text = "Cargar";
             this.btn_Cargar_Historial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Cargar_Historial.UseVisualStyleBackColor = false;
+            this.btn_Cargar_Historial.Click += new System.EventHandler(this.btn_Cargar_Historial_Click);
             // 
             // btn_SalirPresentacion
             // 
@@ -82,6 +82,7 @@
             this.btn_SalirPresentacion.Text = "Salir";
             this.btn_SalirPresentacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SalirPresentacion.UseVisualStyleBackColor = false;
+            this.btn_SalirPresentacion.Click += new System.EventHandler(this.btn_SalirPresentacion_Click);
             // 
             // label1
             // 
@@ -126,6 +127,7 @@
             this.Controls.Add(this.IdHistorial);
             this.Name = "FRM_Historial";
             this.Text = "FRM_Historial";
+            this.Load += new System.EventHandler(this.FRM_Historial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Historial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

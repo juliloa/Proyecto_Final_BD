@@ -21,10 +21,6 @@ namespace Proyecto_Final_BD.Presentacion
         }
         private void AbrirFormulario(IconMenuItem Menu, Form Formulario)
         {
-            /*if (Menu != null)
-            {
-                MenuActivo.BackColor = Color.White;
-            }*/
             Menu.BackColor = Color.White;
             MenuActivo = Menu;
 

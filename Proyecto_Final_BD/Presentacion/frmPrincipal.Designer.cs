@@ -47,9 +47,9 @@
             // 
             this.panelcontenedor.BackColor = System.Drawing.Color.LightCyan;
             this.panelcontenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelcontenedor.Location = new System.Drawing.Point(0, 137);
+            this.panelcontenedor.Location = new System.Drawing.Point(0, 135);
             this.panelcontenedor.Name = "panelcontenedor";
-            this.panelcontenedor.Size = new System.Drawing.Size(1317, 558);
+            this.panelcontenedor.Size = new System.Drawing.Size(1606, 712);
             this.panelcontenedor.TabIndex = 7;
             // 
             // menuStrip1
@@ -66,9 +66,9 @@
             this.Menu_Resultados,
             this.Menu_Posiciones,
             this.Menu_Historial});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 50);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 48);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1317, 87);
+            this.menuStrip1.Size = new System.Drawing.Size(1606, 87);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -81,7 +81,7 @@
             this.sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1317, 50);
+            this.menuStrip2.Size = new System.Drawing.Size(1606, 48);
             this.menuStrip2.TabIndex = 6;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -194,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1317, 695);
+            this.ClientSize = new System.Drawing.Size(1606, 847);
             this.Controls.Add(this.panelcontenedor);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);

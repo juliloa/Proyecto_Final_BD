@@ -521,7 +521,7 @@ namespace Proyecto_Final_BD.Datos
 
         public static int ModificarResultados(ClsResultados Resultados, string id_torneo, string Equipo_local, string Equipo_visitante, string Ganador, string Perdedor, string Empate) //Objeto 
         {
-            string VS = "VS";
+       
             //Variables para resultados o y 1
             int Resultado = 0;
 
