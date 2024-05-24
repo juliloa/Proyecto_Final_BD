@@ -24,11 +24,15 @@ namespace Proyecto_Final_BD.Presentacion
         }
         SqlConnection Conexion = new SqlConnection("server=DESKTOP-K54DEQR\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
         //SqlConnection Conexion = new SqlConnection("server=DESKTOP-63RH14Q\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
-
+        private void btn_SalirPresentacion_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
         public void refreshPantalla()
         {
             dgvRegistroEquipos.DataSource = ClsProcedimientos.PresentarRegistroEquipo();
         }
+
         private void btn_GuardarEquipos_Click(object sender, EventArgs e)
         {
             //Variable que guardará la cantidad de jugadores
@@ -51,7 +55,6 @@ namespace Proyecto_Final_BD.Presentacion
             }
             else
             {
-
                 ClsRegistroEquipo Equipo = new ClsRegistroEquipo();
 
                 Equipo.Nombre = txt_Nombre_Equipo.Text;
@@ -77,6 +80,7 @@ namespace Proyecto_Final_BD.Presentacion
                         {
                             MessageBox.Show("Error al modificar los datos");
                         }
+                        refreshPantalla();
                     }
                 }
                 else
@@ -86,17 +90,14 @@ namespace Proyecto_Final_BD.Presentacion
                     if (Resulta > 0)
                     {
                         MessageBox.Show("Datos guardados con éxito");
-                        refreshPantalla();
                     }
                     else
                     {
                         MessageBox.Show("Error al guardar los datos");
                     }
+                    refreshPantalla();
                 }
-
-
             }
-            refreshPantalla();
         }
 
         private void FRM_RegistroEquipos_Load(object sender, EventArgs e)
@@ -110,28 +111,26 @@ namespace Proyecto_Final_BD.Presentacion
             dgvRegistroEquipos.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
             txt_IdEquipo.Enabled = false;
-            txt_IdTorneo.Enabled = false;
         }
 
         private void btnLimpiarEquipos_Click(object sender, EventArgs e)
         {
             txt_IdEquipo.Clear();
-            txt_IdTorneo.Clear();
             txt_CantidadJugadores.Clear();
             txt_Patrocinadores_Equipo.Clear();
             txt_Nombre_Equipo.Clear();
-
         }
 
         private void btnEliminarEquipos_Click(object sender, EventArgs e)
         {
             if (dgvRegistroEquipos.SelectedRows.Count == 1)
             {
+                ClsRegistroEquipo Equipo = new ClsRegistroEquipo();
                 //Variable para modificar los datos
                 int id = Convert.ToInt32(dgvRegistroEquipos.CurrentRow.Cells["id_Equipo"].Value);
 
                 //Fila seleccionada se guarda en variable id pero solo si esta
-                int Resultado = ClsProcedimientos.EliminarEquipo(id);
+                int Resultado = ClsProcedimientos.EliminarEquipo(Equipo, id);
 
                 if (Resultado > 0)
                 {
@@ -141,7 +140,9 @@ namespace Proyecto_Final_BD.Presentacion
                 {
                     MessageBox.Show("Error en la eliminación de datos");
                 }
+                refreshPantalla();
             }
+
         }
         private void CargarTorneo()
         {
@@ -201,11 +202,6 @@ namespace Proyecto_Final_BD.Presentacion
             cbo_CargarCategoria.Text = dgvRegistroEquipos.SelectedCells[3].Value.ToString();
             txt_CantidadJugadores.Text = dgvRegistroEquipos.SelectedCells[4].Value.ToString();
             txt_Patrocinadores_Equipo.Text = dgvRegistroEquipos.SelectedCells[5].Value.ToString();
-        }
-
-        private void btn_SalirPresentacion_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
     

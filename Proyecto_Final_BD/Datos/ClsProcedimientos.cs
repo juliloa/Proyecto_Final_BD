@@ -101,18 +101,18 @@ namespace Proyecto_Final_BD.Datos
             }
             return Resultados;
         }
-        public static int EliminarTorneo(int id) //Ingresamos un int como id
+        public static int EliminarTorneo(ClsTorneo torneo, int id_Torneo) //Ingresamos un int como id
         {
             int Retorna = 0;
 
             //Creamos la conexión con SQL SERVER y por su defecto nuestra base de datos por medio del comando SqlConnectionWHE
             using (SqlConnection Conexion = ClsConexion.GetInstancia().CrearConexion())
             {
-                //Variable para eliminar todos los datos llamados por medio del la variable definifa
-                string query = "DELETE FROM TORNEOS WHERE id_Torneo= " + id + " ";
-
                 //Creamos un comando de Sql que resiva nuestra variable con los datos y nuestro objeto de la clase conexion
-                SqlCommand Comando = new SqlCommand(query, Conexion);
+                SqlCommand Comando = new SqlCommand("SP_Eliminar_Datos_Torneo", Conexion);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                Comando.Parameters.AddWithValue("@Id_Torneo", id_Torneo);
 
                 //ExecuteNonQuery = En Sql Server, nos registra un # 1 cuando el proceso se cumple, cuando no devuelve un 0. Aplicamos eso mismo
                 Retorna = Comando.ExecuteNonQuery();
@@ -142,7 +142,6 @@ namespace Proyecto_Final_BD.Datos
                 Comando.Parameters.AddWithValue("@Telefono", Jugador.Telefono);
                 Comando.Parameters.AddWithValue("@Correo", Jugador.Correo);
                 Comando.Parameters.AddWithValue("@Estado", Estado);
-                //Comando.Parameters.AddWithValue("@id_Jugador", Jugador);
 
                 Retorna = Comando.ExecuteNonQuery();
 
@@ -219,18 +218,18 @@ namespace Proyecto_Final_BD.Datos
             return Resultados;
         }
 
-        public static int EliminarRegistroJugador(int id) //Ingresamos un int como id
+        public static int EliminarRegistroJugador(ClsRegistroJugador Jugador, int id_Jugador) //Ingresamos un int como id
         {
             int Retorna = 0;
 
             //Creamos la conexión con SQL SERVER y por su defecto nuestra base de datos por medio del comando SqlConnectionWHE
             using (SqlConnection Conexion = ClsConexion.GetInstancia().CrearConexion())
             {
-                //Variable para eliminar todos los datos llamados por medio del la variable definifa
-                string query = "DELETE FROM REGISTRO_JUGADOR WHERE id_Jugador = " + id + " ";
-
                 //Creamos un comando de Sql que resiva nuestra variable con los datos y nuestro objeto de la clase conexion
-                SqlCommand Comando = new SqlCommand(query, Conexion);
+                SqlCommand Comando = new SqlCommand("SP_Eliminar_Datos_Jugador", Conexion);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                Comando.Parameters.AddWithValue("@id_Jugador", id_Jugador);
 
                 //ExecuteNonQuery = En Sql Server, nos registra un # 1 cuando el proceso se cumple, cuando no devuelve un 0. Aplicamos eso mismo
                 Retorna = Comando.ExecuteNonQuery();
@@ -257,7 +256,7 @@ namespace Proyecto_Final_BD.Datos
                 Comando.Parameters.AddWithValue("@Cantidad_Jugadores", Equipo.Cantidad_Jugadores);
                 Comando.Parameters.AddWithValue("@Patrocinadores", Equipo.Patrocinadores);
                 Comando.Parameters.AddWithValue("@Estado", Estado);
-                Comando.Parameters.AddWithValue("@id_Equipo", Equipo.id_Equipo);
+                //Comando.Parameters.AddWithValue("@id_Equipo", Equipo.id_Equipo);
 
                 try
                 {
@@ -333,18 +332,18 @@ namespace Proyecto_Final_BD.Datos
             return Resultados;
         }
 
-        public static int EliminarEquipo(int id) //Ingresamos un int como id
+        public static int EliminarEquipo(ClsRegistroEquipo Equipo, int id_Equipo) //Ingresamos un int como id
         {
             int Retorna = 0;
 
             //Creamos la conexión con SQL SERVER y por su defecto nuestra base de datos por medio del comando SqlConnectionWHE
             using (SqlConnection Conexion = ClsConexion.GetInstancia().CrearConexion())
             {
-                //Variable para eliminar todos los datos llamados por medio del la variable definifa
-                string query = "DELETE FROM REGISTRO_EQUIPOS WHERE id_Equipo= " + id + " ";
-
                 //Creamos un comando de Sql que resiva nuestra variable con los datos y nuestro objeto de la clase conexion
-                SqlCommand Comando = new SqlCommand(query, Conexion);
+                SqlCommand Comando = new SqlCommand("SP_Eliminar_Datos_Equipos", Conexion);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                Comando.Parameters.AddWithValue("@id_Equipo", id_Equipo);
 
                 //ExecuteNonQuery = En Sql Server, nos registra un # 1 cuando el proceso se cumple, cuando no devuelve un 0. Aplicamos eso mismo
                 Retorna = Comando.ExecuteNonQuery();
@@ -438,18 +437,18 @@ namespace Proyecto_Final_BD.Datos
             return Resultados;
         }
 
-        public static int EliminarProgramacion(int id) //Ingresamos un int como id
+        public static int EliminarProgramacion(ClsProgramacion Programacion, int id_Programacion) //Ingresamos un int como id
         {
             int Retorna = 0;
 
             //Creamos la conexión con SQL SERVER y por su defecto nuestra base de datos por medio del comando SqlConnectionWHE
             using (SqlConnection Conexion = ClsConexion.GetInstancia().CrearConexion())
             {
-                //Variable para eliminar todos los datos llamados por medio del la variable definifa
-                string query = "DELETE FROM PROGRAMACION WHERE id_Programacion= " + id + " ";
-
                 //Creamos un comando de Sql que resiva nuestra variable con los datos y nuestro objeto de la clase conexion
-                SqlCommand Comando = new SqlCommand(query, Conexion);
+                SqlCommand Comando = new SqlCommand("SP_Eliminar_Datos_Programacion", Conexion);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                Comando.Parameters.AddWithValue("@id_Programacion", id_Programacion);
 
                 //ExecuteNonQuery = En Sql Server, nos registra un # 1 cuando el proceso se cumple, cuando no devuelve un 0. Aplicamos eso mismo
                 Retorna = Comando.ExecuteNonQuery();
@@ -521,7 +520,7 @@ namespace Proyecto_Final_BD.Datos
 
         public static int ModificarResultados(ClsResultados Resultados, string id_torneo, string Equipo_local, string Equipo_visitante, string Ganador, string Perdedor, string Empate) //Objeto 
         {
-       
+        
             //Variables para resultados o y 1
             int Resultado = 0;
 
@@ -548,18 +547,18 @@ namespace Proyecto_Final_BD.Datos
             }
             return Resultado;
         }
-        public static int EliminarResultados(int id) //Ingresamos un int como id
+        public static int EliminarResultados(ClsResultados Resultados, int id_Resultado) //Ingresamos un int como id
         {
             int Retorna = 0;
 
             //Creamos la conexión con SQL SERVER y por su defecto nuestra base de datos por medio del comando SqlConnectionWHE
             using (SqlConnection Conexion = ClsConexion.GetInstancia().CrearConexion())
             {
-                //Variable para eliminar todos los datos llamados por medio del la variable definifa
-                string query = "DELETE FROM RESULTADOS WHERE id_Resultado = " + id + " ";
-
                 //Creamos un comando de Sql que resiva nuestra variable con los datos y nuestro objeto de la clase conexion
-                SqlCommand Comando = new SqlCommand(query, Conexion);
+                SqlCommand Comando = new SqlCommand("SP_Eliminar_Datos_Resultados", Conexion);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                Comando.Parameters.AddWithValue("@id_Resultado", id_Resultado);
 
                 //ExecuteNonQuery = En Sql Server, nos registra un # 1 cuando el proceso se cumple, cuando no devuelve un 0. Aplicamos eso mismo
                 Retorna = Comando.ExecuteNonQuery();
@@ -679,8 +678,8 @@ namespace Proyecto_Final_BD.Datos
                 Conexion.Close();
                 //Devolvemos la lista
                 return Lista;
-
             }
         }
+        
     }
 }

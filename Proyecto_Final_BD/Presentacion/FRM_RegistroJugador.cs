@@ -123,23 +123,23 @@ namespace Proyecto_Final_BD.Presentacion
         {
             if (dgvRegistroJugador.SelectedRows.Count == 1)
             {
+                ClsRegistroJugador Jugador = new ClsRegistroJugador();
                 int id = Convert.ToInt32(dgvRegistroJugador.CurrentRow.Cells["id_Jugador"].Value);
 
-                int Resultado = ClsProcedimientos.EliminarRegistroJugador(id);
+                int Resultado = ClsProcedimientos.EliminarRegistroJugador(Jugador, id);
 
-                if (Resultado == 0)
+
+                if (Resultado > 0)
                 {
-                    if (Resultado > 0)
-                    {
-                        MessageBox.Show("Datos eliminados con éxito");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error en la eliminación de datos");
-                    }
+                    MessageBox.Show("Datos eliminados con éxito");
                 }
-
+                else
+                {
+                    MessageBox.Show("Error en la eliminación de datos");
+                }
+                refreshPantalla();
             }
+
         }
 
         private void CargarEquipo()

@@ -19,8 +19,6 @@ namespace Proyecto_Final_BD.Presentacion
         {
             InitializeComponent();
             dgvProgramacion.Font = new Font("SimSun", 9);
-            CargarEquipoLocal();
-            CargarEquipoVisi();
             CargarTorneo();
         }
         SqlConnection Conexion = new SqlConnection("server=DESKTOP-K54DEQR\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
@@ -66,13 +64,12 @@ namespace Proyecto_Final_BD.Presentacion
                         if (Resulta > 0)
                         {
                             MessageBox.Show("Datos modificados con éxito");
-                            refreshPantalla();
                         }
-
                         else
                         {
                             MessageBox.Show("Error al modificar los datos");
                         }
+                        refreshPantalla();
                     }
                 }
                 else
@@ -82,13 +79,13 @@ namespace Proyecto_Final_BD.Presentacion
                     if (Resulta > 0)
                     {
                         MessageBox.Show("Datos guardados con éxito");
-                        refreshPantalla();
                     }
 
                     else
                     {
                         MessageBox.Show("Error al guardar los datos");
                     }
+                    refreshPantalla();
                 }
             }
         }
@@ -117,11 +114,12 @@ namespace Proyecto_Final_BD.Presentacion
         {
             if (dgvProgramacion.SelectedRows.Count == 1)
             {
+                ClsProgramacion Programacion = new ClsProgramacion();
                 //Variable para modificar los datos
                 int id = Convert.ToInt32(dgvProgramacion.CurrentRow.Cells["id_Programacion"].Value);
 
                 //Fila seleccionada se guarda en variable id pero solo si esta
-                int Resultado = ClsProcedimientos.EliminarProgramacion(id);
+                int Resultado = ClsProcedimientos.EliminarProgramacion(Programacion, id);
 
                 if (Resultado > 0)
                 {
@@ -167,63 +165,6 @@ namespace Proyecto_Final_BD.Presentacion
                 }
             }
         }
-        private void CargarEquipoVisi()
-        {
-            try
-            {
-                Conexion.Open();
-
-                SqlCommand Comando = new SqlCommand("SELECT * FROM REGISTRO_EQUIPOS WHERE Estado = 1 ", Conexion);
-                SqlDataReader Lector = Comando.ExecuteReader();
-
-                while (Lector.Read())
-                {
-                    cbo_Equipo_Visitante.Items.Add(Lector[2].ToString());
-                }
-                cbo_Equipo_Visitante.Items.Insert(0, "-Seleccione Visitante-");
-                cbo_Equipo_Visitante.SelectedIndex = 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar Equipo Visitante: " + ex.Message);
-            }
-            finally
-            {
-                if (Conexion != null && Conexion.State == ConnectionState.Open)
-                {
-                    Conexion.Close();
-                }
-            }
-        }
-        private void CargarEquipoLocal()
-        {
-            try
-            {
-                Conexion.Open();
-
-                SqlCommand Comando = new SqlCommand("SELECT *  FROM REGISTRO_EQUIPOS WHERE Estado = 1 ", Conexion);
-
-                SqlDataReader Lector = Comando.ExecuteReader();
-
-                while (Lector.Read())
-                {
-                    cbo_Equipo_Local.Items.Add(Lector[2].ToString());
-                }
-                cbo_Equipo_Local.Items.Insert(0, "-Seleccione Local-");
-                cbo_Equipo_Local.SelectedIndex = 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar Equipo Local: " + ex.Message);
-            }
-            finally
-            {
-                if (Conexion != null && Conexion.State == ConnectionState.Open)
-                {
-                    Conexion.Close();
-                }
-            }
-        }
 
         private void dgvProgramacion_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -234,6 +175,59 @@ namespace Proyecto_Final_BD.Presentacion
             txt_UbicacionPrograma.Text = dgvProgramacion.SelectedCells[4].Value.ToString();
             cbo_Equipo_Local.Text = dgvProgramacion.SelectedCells[5].Value.ToString();
             cbo_Equipo_Visitante.Text = dgvProgramacion.SelectedCells[6].Value.ToString();
+        }
+
+        private void cbo_CargarTorneo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbo_CargarTorneo.SelectedIndex > 0)
+            {
+                int idTorneo;
+
+                if (int.TryParse(cbo_CargarTorneo.SelectedItem.ToString(), out idTorneo))
+                {
+                    CargarEquiposPorTorneo(idTorneo);
+                }
+            }
+        }
+        private void CargarEquiposPorTorneo(int idTorneo)
+        {
+            cbo_Equipo_Local.Items.Clear();
+            cbo_Equipo_Visitante.Items.Clear();
+
+            try
+            {
+                Conexion.Open();
+
+                SqlCommand Comando = new SqlCommand("SP_Cargar_Equipos_SegunTorneo", Conexion);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                Comando.Parameters.AddWithValue("@id_Torneo", idTorneo);
+
+                SqlDataReader Lector = Comando.ExecuteReader();
+
+                while (Lector.Read())
+                {
+                    string nombreEquipo = Lector["Nombre"].ToString();
+                    cbo_Equipo_Local.Items.Add(nombreEquipo);
+                    cbo_Equipo_Visitante.Items.Add(nombreEquipo);
+                }
+
+                cbo_Equipo_Local.Items.Insert(0, "-Seleccione Local-");
+                cbo_Equipo_Visitante.Items.Insert(0, "-Seleccione Visitante-");
+                cbo_Equipo_Local.SelectedIndex = 0;
+                cbo_Equipo_Visitante.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los equipos: " + ex.Message);
+            }
+            finally
+            {
+                if (Conexion != null && Conexion.State == ConnectionState.Open)
+                {
+                    Conexion.Close();
+                }
+            }
         }
     }
 }

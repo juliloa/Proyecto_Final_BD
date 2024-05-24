@@ -125,11 +125,13 @@ namespace Proyecto_Final_BD.Presentacion
         {
             if (dgvTorneo.SelectedRows.Count == 1)
             {
+                ClsTorneo torneo = new ClsTorneo();
+
                 //Variable para modificar los datos
                 int id = Convert.ToInt32(dgvTorneo.CurrentRow.Cells["id_Torneo"].Value);
 
                 //Fila seleccionada se guarda en variable id pero solo si esta
-                int Resultado = ClsProcedimientos.EliminarTorneo(id);
+                int Resultado = ClsProcedimientos.EliminarTorneo(torneo, id);
 
                 if (Resultado > 0)
                 {
