@@ -88,7 +88,7 @@ namespace Proyecto_Final_BD.Presentacion
             {
                 Conexion.Open();
 
-                SqlCommand Comando = new SqlCommand("SELECT * FROM TORNEOS WHERE Estado = 1", Conexion);
+                SqlCommand Comando = new SqlCommand("[SP_Presentar_Datos_TorneosActivos]", Conexion);
                 SqlDataReader Lector = Comando.ExecuteReader();
 
                 while (Lector.Read())

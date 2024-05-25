@@ -31,20 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_Posiciones));
             this.btn_GuardarPosiciones = new System.Windows.Forms.Button();
             this.dgv_Posiciones = new System.Windows.Forms.DataGridView();
-            this.text_Encuentros = new System.Windows.Forms.TextBox();
-            this.text_Victorias = new System.Windows.Forms.TextBox();
-            this.txt_Derrotas = new System.Windows.Forms.TextBox();
-            this.txt_Empates = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.btn_SalirPresentacion = new System.Windows.Forms.Button();
             this.txt_id_Posicion = new System.Windows.Forms.TextBox();
             this.Cbo_cargar_Equipos = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEliminarPosiciones = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.text_Encuentros = new System.Windows.Forms.TextBox();
+            this.txt_Empates = new System.Windows.Forms.TextBox();
+            this.txt_Derrotas = new System.Windows.Forms.TextBox();
+            this.text_Victorias = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Posiciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,88 +77,8 @@
             this.dgv_Posiciones.ReadOnly = true;
             this.dgv_Posiciones.RowHeadersWidth = 62;
             this.dgv_Posiciones.RowTemplate.Height = 28;
-            this.dgv_Posiciones.Size = new System.Drawing.Size(826, 385);
+            this.dgv_Posiciones.Size = new System.Drawing.Size(1102, 385);
             this.dgv_Posiciones.TabIndex = 122;
-            // 
-            // text_Encuentros
-            // 
-            this.text_Encuentros.BackColor = System.Drawing.Color.Snow;
-            this.text_Encuentros.Font = new System.Drawing.Font("SimSun", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_Encuentros.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.text_Encuentros.Location = new System.Drawing.Point(209, 169);
-            this.text_Encuentros.Name = "text_Encuentros";
-            this.text_Encuentros.Size = new System.Drawing.Size(61, 30);
-            this.text_Encuentros.TabIndex = 121;
-            // 
-            // text_Victorias
-            // 
-            this.text_Victorias.BackColor = System.Drawing.Color.Snow;
-            this.text_Victorias.Font = new System.Drawing.Font("SimSun", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_Victorias.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.text_Victorias.Location = new System.Drawing.Point(209, 222);
-            this.text_Victorias.Name = "text_Victorias";
-            this.text_Victorias.Size = new System.Drawing.Size(61, 30);
-            this.text_Victorias.TabIndex = 120;
-            // 
-            // txt_Derrotas
-            // 
-            this.txt_Derrotas.BackColor = System.Drawing.Color.Snow;
-            this.txt_Derrotas.Font = new System.Drawing.Font("SimSun", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Derrotas.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txt_Derrotas.Location = new System.Drawing.Point(209, 271);
-            this.txt_Derrotas.Name = "txt_Derrotas";
-            this.txt_Derrotas.Size = new System.Drawing.Size(61, 30);
-            this.txt_Derrotas.TabIndex = 119;
-            // 
-            // txt_Empates
-            // 
-            this.txt_Empates.BackColor = System.Drawing.Color.Snow;
-            this.txt_Empates.Font = new System.Drawing.Font("SimSun", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Empates.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txt_Empates.Location = new System.Drawing.Point(209, 319);
-            this.txt_Empates.Name = "txt_Empates";
-            this.txt_Empates.Size = new System.Drawing.Size(61, 30);
-            this.txt_Empates.TabIndex = 118;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("SimSun", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(36, 169);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(152, 26);
-            this.label7.TabIndex = 117;
-            this.label7.Text = "ENCUENTROS";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("SimSun", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(36, 230);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(138, 26);
-            this.label6.TabIndex = 116;
-            this.label6.Text = "VICTORIAS";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("SimSun", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(36, 275);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 26);
-            this.label5.TabIndex = 115;
-            this.label5.Text = "DERROTAS";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("SimSun", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(36, 323);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 26);
-            this.label4.TabIndex = 114;
-            this.label4.Text = "EMPATES";
             // 
             // btn_SalirPresentacion
             // 
@@ -231,6 +151,102 @@
             this.btnEliminarPosiciones.UseVisualStyleBackColor = false;
             this.btnEliminarPosiciones.Click += new System.EventHandler(this.btnEliminarPosiciones_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Enabled = false;
+            this.label4.Font = new System.Drawing.Font("SimSun", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(36, 323);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 26);
+            this.label4.TabIndex = 114;
+            this.label4.Text = "EMPATES";
+            this.label4.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Enabled = false;
+            this.label5.Font = new System.Drawing.Font("SimSun", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(36, 275);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(124, 26);
+            this.label5.TabIndex = 115;
+            this.label5.Text = "DERROTAS";
+            this.label5.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Enabled = false;
+            this.label6.Font = new System.Drawing.Font("SimSun", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(36, 230);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(138, 26);
+            this.label6.TabIndex = 116;
+            this.label6.Text = "VICTORIAS";
+            this.label6.Visible = false;
+            // 
+            // text_Encuentros
+            // 
+            this.text_Encuentros.BackColor = System.Drawing.Color.Snow;
+            this.text_Encuentros.Enabled = false;
+            this.text_Encuentros.Font = new System.Drawing.Font("SimSun", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_Encuentros.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.text_Encuentros.Location = new System.Drawing.Point(209, 169);
+            this.text_Encuentros.Name = "text_Encuentros";
+            this.text_Encuentros.Size = new System.Drawing.Size(61, 30);
+            this.text_Encuentros.TabIndex = 121;
+            this.text_Encuentros.Visible = false;
+            // 
+            // txt_Empates
+            // 
+            this.txt_Empates.BackColor = System.Drawing.Color.Snow;
+            this.txt_Empates.Enabled = false;
+            this.txt_Empates.Font = new System.Drawing.Font("SimSun", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Empates.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txt_Empates.Location = new System.Drawing.Point(209, 319);
+            this.txt_Empates.Name = "txt_Empates";
+            this.txt_Empates.Size = new System.Drawing.Size(61, 30);
+            this.txt_Empates.TabIndex = 118;
+            this.txt_Empates.Visible = false;
+            // 
+            // txt_Derrotas
+            // 
+            this.txt_Derrotas.BackColor = System.Drawing.Color.Snow;
+            this.txt_Derrotas.Enabled = false;
+            this.txt_Derrotas.Font = new System.Drawing.Font("SimSun", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Derrotas.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txt_Derrotas.Location = new System.Drawing.Point(209, 271);
+            this.txt_Derrotas.Name = "txt_Derrotas";
+            this.txt_Derrotas.Size = new System.Drawing.Size(61, 30);
+            this.txt_Derrotas.TabIndex = 119;
+            this.txt_Derrotas.Visible = false;
+            // 
+            // text_Victorias
+            // 
+            this.text_Victorias.BackColor = System.Drawing.Color.Snow;
+            this.text_Victorias.Enabled = false;
+            this.text_Victorias.Font = new System.Drawing.Font("SimSun", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_Victorias.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.text_Victorias.Location = new System.Drawing.Point(209, 222);
+            this.text_Victorias.Name = "text_Victorias";
+            this.text_Victorias.Size = new System.Drawing.Size(61, 30);
+            this.text_Victorias.TabIndex = 120;
+            this.text_Victorias.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Enabled = false;
+            this.label7.Font = new System.Drawing.Font("SimSun", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(36, 169);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(152, 26);
+            this.label7.TabIndex = 117;
+            this.label7.Text = "ENCUENTROS";
+            this.label7.Visible = false;
+            // 
             // FRM_Posiciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -265,19 +281,19 @@
 
         private System.Windows.Forms.Button btn_GuardarPosiciones;
         private System.Windows.Forms.DataGridView dgv_Posiciones;
-        private System.Windows.Forms.TextBox text_Encuentros;
-        private System.Windows.Forms.TextBox text_Victorias;
-        private System.Windows.Forms.TextBox txt_Derrotas;
-        private System.Windows.Forms.TextBox txt_Empates;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_SalirPresentacion;
         private System.Windows.Forms.TextBox txt_id_Posicion;
         private System.Windows.Forms.ComboBox Cbo_cargar_Equipos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEliminarPosiciones;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox text_Encuentros;
+        private System.Windows.Forms.TextBox txt_Empates;
+        private System.Windows.Forms.TextBox txt_Derrotas;
+        private System.Windows.Forms.TextBox text_Victorias;
+        private System.Windows.Forms.Label label7;
     }
 }

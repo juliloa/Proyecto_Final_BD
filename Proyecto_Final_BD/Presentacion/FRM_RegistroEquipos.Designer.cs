@@ -54,7 +54,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("SimSun", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 25);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(477, 56);
             this.label1.TabIndex = 145;
@@ -237,12 +237,12 @@
             this.dgvRegistroEquipos.BackgroundColor = System.Drawing.Color.LightCyan;
             this.dgvRegistroEquipos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRegistroEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegistroEquipos.Location = new System.Drawing.Point(463, 76);
+            this.dgvRegistroEquipos.Location = new System.Drawing.Point(451, 76);
             this.dgvRegistroEquipos.Name = "dgvRegistroEquipos";
             this.dgvRegistroEquipos.ReadOnly = true;
             this.dgvRegistroEquipos.RowHeadersWidth = 62;
             this.dgvRegistroEquipos.RowTemplate.Height = 28;
-            this.dgvRegistroEquipos.Size = new System.Drawing.Size(1186, 385);
+            this.dgvRegistroEquipos.Size = new System.Drawing.Size(1198, 385);
             this.dgvRegistroEquipos.TabIndex = 133;
             this.dgvRegistroEquipos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroEquipos_CellClick);
             // 

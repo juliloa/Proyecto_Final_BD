@@ -187,7 +187,7 @@ namespace Proyecto_Final_BD.Presentacion
                             Resultados.id_Resultado = id;
 
                             int Resulta = ClsProcedimientos.ModificarResultados(Resultados, cbo_Id_Torneo.Text, lbl_Equipo_Local.Text,
-                           lbl_Equipo_Visitante.Text, "", "", "Sí");
+                           lbl_Equipo_Visitante.Text, "", "", "Si");
 
                             if (Resulta > 0)
                             {
@@ -245,7 +245,7 @@ namespace Proyecto_Final_BD.Presentacion
                     else if (nup_Marcador_Local.Value == nud_Marcador_Visitante.Value)
                     {
                         int Resulta = ClsProcedimientos.GuardarResultados(Resultados, cbo_Id_Torneo.Text, lbl_Equipo_Local.Text,
-                           lbl_Equipo_Visitante.Text, "", "", "Sí");
+                           lbl_Equipo_Visitante.Text, "", "", "Si");
                         if (Resulta > 0)
                         {
                             MessageBox.Show("Datos guardados con éxito");

@@ -62,11 +62,39 @@ namespace Proyecto_Final_BD.Presentacion
             dgv_Posiciones.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
             txt_id_Posicion.Enabled = false;
+
         }
 
         public void refreshPantalla()
         {
             dgv_Posiciones.DataSource = ClsProcedimientos.PresentarPosiciones();
+        }
+        private void btn_SalirPresentacion_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnEliminarPosiciones_Click(object sender, EventArgs e)
+        {
+            if (dgv_Posiciones.SelectedRows.Count == 1)
+            {
+                ClsPosiciones Posiciones = new ClsPosiciones();
+                //Variable para modificar los datos
+                int id = Convert.ToInt32(dgv_Posiciones.CurrentRow.Cells["id_Posicion"].Value);
+
+                //Fila seleccionada se guarda en variable id pero solo si esta
+                int Resultado = ClsProcedimientos.EliminarPosiciones(Posiciones, id);
+
+                if (Resultado > 0)
+                {
+                    MessageBox.Show("Datos eliminados con éxito");
+                }
+                else
+                {
+                    MessageBox.Show("Error en la eliminación de datos");
+                }
+                refreshPantalla();
+            }
         }
 
         private void btn_GuardarPosiciones_Click(object sender, EventArgs e)
@@ -95,43 +123,14 @@ namespace Proyecto_Final_BD.Presentacion
                         text_Encuentros.Text, text_Victorias.Text, txt_Derrotas.Text, txt_Empates.Text);
                     if (Posicion > 0)
                     {
-                        MessageBox.Show("Datos guardados con éxito");
-                        refreshPantalla();
+                        MessageBox.Show("Datos guardados con éxito");   
                     }
-
                     else
                     {
                         MessageBox.Show("Error al guardar los datos");
                     }
+                    refreshPantalla();
                 }
-            }
-        }
-
-        private void btn_SalirPresentacion_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnEliminarPosiciones_Click(object sender, EventArgs e)
-        {
-            if (dgv_Posiciones.SelectedRows.Count == 1)
-            {
-                ClsPosiciones Posiciones = new ClsPosiciones();
-                //Variable para modificar los datos
-                int id = Convert.ToInt32(dgv_Posiciones.CurrentRow.Cells["id_Posicion"].Value);
-
-                //Fila seleccionada se guarda en variable id pero solo si esta
-                int Resultado = ClsProcedimientos.EliminarPosiciones(Posiciones, id);
-
-                if (Resultado > 0)
-                {
-                    MessageBox.Show("Datos eliminados con éxito");
-                }
-                else
-                {
-                    MessageBox.Show("Error en la eliminación de datos");
-                }
-                refreshPantalla();
             }
         }
     }
