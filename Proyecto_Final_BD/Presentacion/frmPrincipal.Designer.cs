@@ -30,8 +30,6 @@
         {
             this.panelcontenedor = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Torneo = new FontAwesome.Sharp.IconMenuItem();
             this.Menu_Equipos = new FontAwesome.Sharp.IconMenuItem();
             this.Menu_Juador = new FontAwesome.Sharp.IconMenuItem();
@@ -39,6 +37,8 @@
             this.Menu_Resultados = new FontAwesome.Sharp.IconMenuItem();
             this.Menu_Posiciones = new FontAwesome.Sharp.IconMenuItem();
             this.Menu_Historial = new FontAwesome.Sharp.IconMenuItem();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -71,26 +71,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1606, 87);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // menuStrip2
-            // 
-            this.menuStrip2.BackColor = System.Drawing.Color.LightCyan;
-            this.menuStrip2.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1606, 48);
-            this.menuStrip2.TabIndex = 6;
-            this.menuStrip2.Text = "menuStrip2";
-            // 
-            // sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem
-            // 
-            this.sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem.Font = new System.Drawing.Font("SimSun", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem.Name = "sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem";
-            this.sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem.Size = new System.Drawing.Size(873, 44);
-            this.sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem.Text = "SISTEMA DE REGISTRO DE EVENTOS DE FÚTBOL";
             // 
             // Menu_Torneo
             // 
@@ -189,6 +169,26 @@
             this.Menu_Historial.Text = "Historial";
             this.Menu_Historial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Menu_Historial.Click += new System.EventHandler(this.Menu_Historial_Click);
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.BackColor = System.Drawing.Color.LightCyan;
+            this.menuStrip2.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(1606, 48);
+            this.menuStrip2.TabIndex = 6;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem
+            // 
+            this.sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem.Font = new System.Drawing.Font("SimSun", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem.Name = "sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem";
+            this.sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem.Size = new System.Drawing.Size(873, 44);
+            this.sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem.Text = "SISTEMA DE REGISTRO DE EVENTOS DE FÚTBOL";
             // 
             // frmPrincipal
             // 

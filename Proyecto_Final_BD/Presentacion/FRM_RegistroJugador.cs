@@ -22,8 +22,8 @@ namespace Proyecto_Final_BD.Presentacion
             CargarEquipo();
             CargarGenero();
         }
-        SqlConnection Conexion = new SqlConnection("server=DESKTOP-K54DEQR\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
-        //SqlConnection Conexion = new SqlConnection("server=DESKTOP-63RH14Q\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
+        //SqlConnection Conexion = new SqlConnection("server=DESKTOP-K54DEQR\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
+        SqlConnection Conexion = new SqlConnection("server=DESKTOP-63RH14Q\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
         private void FRM_RegistroJugador_Load(object sender, EventArgs e)
         {
             ClsConexion Conexion = new ClsConexion();
@@ -148,7 +148,7 @@ namespace Proyecto_Final_BD.Presentacion
             {
                 Conexion.Open();
 
-                SqlCommand Comando = new SqlCommand("SELECT * FROM REGISTRO_EQUIPOS WHERE Estado = 1", Conexion);
+                SqlCommand Comando = new SqlCommand("SP_Presentar_Datos_EuiposActivos", Conexion);
                 SqlDataReader Lector = Comando.ExecuteReader();
 
                 List<ClsRegistroEquipo> listaTorneos = new List<ClsRegistroEquipo>();
@@ -176,7 +176,7 @@ namespace Proyecto_Final_BD.Presentacion
             cbo_Genero_Jugador.Items.Clear();
             Conexion.Open();
 
-            SqlCommand Comando = new SqlCommand("SELECT * FROM GENEROS", Conexion);
+            SqlCommand Comando = new SqlCommand("SP_Presentar_Datos_Generos", Conexion);
 
             SqlDataReader Leer = Comando.ExecuteReader();
             while (Leer.Read())

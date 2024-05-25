@@ -22,7 +22,7 @@ namespace Proyecto_Final_BD.Presentacion
             CargarPrpgramacion();
             CargarTorneos();
         }
-        SqlConnection Conexion = new SqlConnection("server=DESKTOP-K54DEQR\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
+        SqlConnection Conexion = new SqlConnection("server=DESKTOP-63RH14Q\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
         //SqlConnection Conexion = new SqlConnection("server=DESKTOP-63RH14Q\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
 
         public void refreshPantalla()
@@ -46,7 +46,7 @@ namespace Proyecto_Final_BD.Presentacion
             {
                 Conexion.Open();
 
-                SqlCommand Comando = new SqlCommand("SELECT * FROM PROGRAMACION WHERE Estado = 1", Conexion);
+                SqlCommand Comando = new SqlCommand("SP_Presentar_Datos_ProgramacionActiva", Conexion);
                 SqlDataReader Lector = Comando.ExecuteReader();
 
                 while (Lector.Read())
@@ -74,7 +74,7 @@ namespace Proyecto_Final_BD.Presentacion
             {
                 Conexion.Open();
 
-                SqlCommand Comando = new SqlCommand("SELECT * FROM TORNEOS WHERE Estado = 1", Conexion);
+                SqlCommand Comando = new SqlCommand("SP_Presentar_Datos_TorneosActivos", Conexion);
                 SqlDataReader Lector = Comando.ExecuteReader();
 
                 while (Lector.Read())
@@ -276,17 +276,6 @@ namespace Proyecto_Final_BD.Presentacion
             }
         }
 
-        private void cbo_Id_Torneo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Cbo_id_Programacion.SelectedIndex > 0)
-            {
-                int idTorneo;
-                if (int.TryParse(Cbo_id_Programacion.SelectedItem.ToString(), out idTorneo))
-                {
-                    CargarEquiposPorTorneo(idTorneo);
-                }
-            }
-        }
         private void CargarEquiposPorTorneo(int idTorneo)
         {
             try
@@ -321,5 +310,16 @@ namespace Proyecto_Final_BD.Presentacion
             }
         }
 
+        private void Cbo_id_Programacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Cbo_id_Programacion.SelectedIndex > 0)
+            {
+                int idTorneo;
+                if (int.TryParse(Cbo_id_Programacion.SelectedItem.ToString(), out idTorneo))
+                {
+                    CargarEquiposPorTorneo(idTorneo);
+                }
+            }
+        }
     }
 }

@@ -19,8 +19,8 @@ namespace Proyecto_Final_BD
         public ClsConexion()
         {
             this.Base = "PRUEBAFINAL";
-            this.Servidor = "DESKTOP-K54DEQR\\SQLEXPRESS";
-            // this.Servidor = "DESKTOP-63RH14Q\\SQLEXPRESS";
+           // this.Servidor = "DESKTOP-K54DEQR\\SQLEXPRESS";
+            this.Servidor = "DESKTOP-63RH14Q\\SQLEXPRESS";
             this.Usuario = "sa";
             this.Clave = "12345678";
         }

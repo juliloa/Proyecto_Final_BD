@@ -21,8 +21,8 @@ namespace Proyecto_Final_BD.Presentacion
             dgv_Posiciones.Font = new Font("SimSun", 9);
             Cargar_Equipo();
         }
-        SqlConnection Conexion = new SqlConnection("server=DESKTOP-K54DEQR\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
-        //SqlConnection Conexion = new SqlConnection("server=DESKTOP-63RH14Q\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
+        //SqlConnection Conexion = new SqlConnection("server=DESKTOP-K54DEQR\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
+        SqlConnection Conexion = new SqlConnection("server=DESKTOP-63RH14Q\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
 
         private void Cargar_Equipo()
         {
@@ -30,7 +30,7 @@ namespace Proyecto_Final_BD.Presentacion
             {
                 Conexion.Open();
 
-                SqlCommand Comando = new SqlCommand("SELECT * FROM REGISTRO_EQUIPOS WHERE Estado = 1", Conexion);
+                SqlCommand Comando = new SqlCommand("[SP_Presentar_Datos_EuiposActivos]", Conexion);
                 SqlDataReader Lector = Comando.ExecuteReader();
 
                 while (Lector.Read())
@@ -110,6 +110,29 @@ namespace Proyecto_Final_BD.Presentacion
         private void btn_SalirPresentacion_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnEliminarPosiciones_Click(object sender, EventArgs e)
+        {
+            if (dgv_Posiciones.SelectedRows.Count == 1)
+            {
+                ClsPosiciones Posiciones = new ClsPosiciones();
+                //Variable para modificar los datos
+                int id = Convert.ToInt32(dgv_Posiciones.CurrentRow.Cells["id_Posicion"].Value);
+
+                //Fila seleccionada se guarda en variable id pero solo si esta
+                int Resultado = ClsProcedimientos.EliminarPosiciones(Posiciones, id);
+
+                if (Resultado > 0)
+                {
+                    MessageBox.Show("Datos eliminados con éxito");
+                }
+                else
+                {
+                    MessageBox.Show("Error en la eliminación de datos");
+                }
+                refreshPantalla();
+            }
         }
     }
 

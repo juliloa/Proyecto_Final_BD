@@ -44,6 +44,7 @@
             this.Cbo_cargar_Equipos = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnEliminarPosiciones = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Posiciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,7 +167,7 @@
             this.btn_SalirPresentacion.Font = new System.Drawing.Font("SimSun", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SalirPresentacion.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_SalirPresentacion.Image = ((System.Drawing.Image)(resources.GetObject("btn_SalirPresentacion.Image")));
-            this.btn_SalirPresentacion.Location = new System.Drawing.Point(277, 508);
+            this.btn_SalirPresentacion.Location = new System.Drawing.Point(574, 508);
             this.btn_SalirPresentacion.Name = "btn_SalirPresentacion";
             this.btn_SalirPresentacion.Size = new System.Drawing.Size(177, 46);
             this.btn_SalirPresentacion.TabIndex = 113;
@@ -214,11 +215,28 @@
             this.label1.TabIndex = 109;
             this.label1.Text = "ID";
             // 
+            // btnEliminarPosiciones
+            // 
+            this.btnEliminarPosiciones.BackColor = System.Drawing.Color.DarkGray;
+            this.btnEliminarPosiciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarPosiciones.Font = new System.Drawing.Font("SimSun", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarPosiciones.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnEliminarPosiciones.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarPosiciones.Image")));
+            this.btnEliminarPosiciones.Location = new System.Drawing.Point(319, 508);
+            this.btnEliminarPosiciones.Name = "btnEliminarPosiciones";
+            this.btnEliminarPosiciones.Size = new System.Drawing.Size(177, 46);
+            this.btnEliminarPosiciones.TabIndex = 141;
+            this.btnEliminarPosiciones.Text = "Eliminar";
+            this.btnEliminarPosiciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminarPosiciones.UseVisualStyleBackColor = false;
+            this.btnEliminarPosiciones.Click += new System.EventHandler(this.btnEliminarPosiciones_Click);
+            // 
             // FRM_Posiciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1692, 793);
+            this.Controls.Add(this.btnEliminarPosiciones);
             this.Controls.Add(this.btn_GuardarPosiciones);
             this.Controls.Add(this.dgv_Posiciones);
             this.Controls.Add(this.text_Encuentros);
@@ -260,5 +278,6 @@
         private System.Windows.Forms.ComboBox Cbo_cargar_Equipos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEliminarPosiciones;
     }
 }

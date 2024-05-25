@@ -45,9 +45,8 @@ namespace Proyecto_Final_BD.Datos
             //Conexion
             using (SqlConnection Conexion = ClsConexion.GetInstancia().CrearConexion())
             {
-                string query = "SELECT * FROM TORNEOS"; //Variable ya no con los datos sino con la sintaxis de una consulta general en Sql Server
                 //Comando
-                SqlCommand Comando = new SqlCommand(query, Conexion);
+                SqlCommand Comando = new SqlCommand("SP_Presentar_Datos_Torneo", Conexion);
                 //Comando para leer los datos
                 SqlDataReader Reader = Comando.ExecuteReader();
                 //Bucle que nos mostrará todos los datos ingresados en la lista
@@ -154,9 +153,8 @@ namespace Proyecto_Final_BD.Datos
             //Conexion
             using (SqlConnection Conexion = ClsConexion.GetInstancia().CrearConexion())
             {
-                string query = "SELECT * FROM REGISTRO_JUGADOR"; //Variable no con los datos sino con la sintaxis de una consulta general en Sql Server
                 //Comando
-                SqlCommand Comando = new SqlCommand(query, Conexion);
+                SqlCommand Comando = new SqlCommand("SP_Presentar_Datos_Jugador", Conexion);
                 //Comando para leer los datos
                 SqlDataReader Reader = Comando.ExecuteReader();
                 //Bucle que nos mostrará todos los datos ingresados en la lista
@@ -278,9 +276,8 @@ namespace Proyecto_Final_BD.Datos
             //Conexion
             using (SqlConnection Conexion = ClsConexion.GetInstancia().CrearConexion())
             {
-                string query = "SELECT * FROM REGISTRO_EQUIPOS"; //Variable ya no con los datos sino con la sintaxis de una consulta general en Sql Server
                 //Comando
-                SqlCommand Comando = new SqlCommand(query, Conexion);
+                SqlCommand Comando = new SqlCommand("SP_Presentar_Datos_Equipos", Conexion);
                 //Comando para leer los datos
                 SqlDataReader Reader = Comando.ExecuteReader();
                 //Bucle que nos mostrará todos los datos ingresados en la lista
@@ -380,9 +377,8 @@ namespace Proyecto_Final_BD.Datos
             //Conexion
             using (SqlConnection Conexion = ClsConexion.GetInstancia().CrearConexion())
             {
-                string query = "SELECT * FROM PROGRAMACION"; //Variable ya no con los datos sino con la sintaxis de una consulta general en Sql Server
                 //Comando
-                SqlCommand Comando = new SqlCommand(query, Conexion);
+                SqlCommand Comando = new SqlCommand("SP_Presentar_Datos_Programacion", Conexion);
                 //Comando para leer los datos
                 SqlDataReader Reader = Comando.ExecuteReader();
                 //Bucle que nos mostrará todos los datos ingresados en la lista
@@ -487,9 +483,8 @@ namespace Proyecto_Final_BD.Datos
             //Conexion
             using (SqlConnection Conexion = ClsConexion.GetInstancia().CrearConexion())
             {
-                string query = "SELECT * FROM RESULTADOS"; //Variable ya no con los datos sino con la sintaxis de una consulta general en Sql Server
                 //Comando
-                SqlCommand Comando = new SqlCommand(query, Conexion);
+                SqlCommand Comando = new SqlCommand("SP_Presentar_Datos_Resultados", Conexion);
                 //Comando para leer los datos
                 SqlDataReader Reader = Comando.ExecuteReader();
                 //Bucle que nos mostrará todos los datos ingresados en la lista
@@ -594,9 +589,8 @@ namespace Proyecto_Final_BD.Datos
             //Conexion
             using (SqlConnection Conexion = ClsConexion.GetInstancia().CrearConexion())
             {
-                string query = "SELECT * FROM POSICIONES"; //Variable ya no con los datos sino con la sintaxis de una consulta general en Sql Server
                 //Comando
-                SqlCommand Comando = new SqlCommand(query, Conexion);
+                SqlCommand Comando = new SqlCommand("SP_Presentar_Datos_Posiciones", Conexion);
                 //Comando para leer los datos
                 SqlDataReader Reader = Comando.ExecuteReader();
                 //Bucle que nos mostrará todos los datos ingresados en la lista
@@ -620,66 +614,42 @@ namespace Proyecto_Final_BD.Datos
                 return Lista;
             }
         }
-        public static int GuardarHistorial(ClsHistorial Hitatorial, string id_Torneo, string Fecha, string Equipo_Local, string Equipo_Visitante, string Marcador, string Evento_Destacado)
+        public static int EliminarPosiciones(ClsPosiciones Posiciones, int id_Posicion) //Ingresamos un int como id
         {
-            string VS = "VS";
             int Retorna = 0;
 
+            //Creamos la conexión con SQL SERVER y por su defecto nuestra base de datos por medio del comando SqlConnectionWHE
             using (SqlConnection Conexion = ClsConexion.GetInstancia().CrearConexion())
             {
-                string query = "INSERT INTO HISTORIAL (id_Torneo, Fecha, Equipo_local, VS, Equipo_visitante, Marcador, Evento_Destacado)" +
-                    "VALUES (@id_Torneo, @Fecha, @Equipo_local, @VS, @Equipo_visitaante, @Marcador, @Evento_Destacado)";
+                //Creamos un comando de Sql que resiva nuestra variable con los datos y nuestro objeto de la clase conexion
+                SqlCommand Comando = new SqlCommand("SP_Eliminar_Datos_Posiciones", Conexion);
+                Comando.CommandType = CommandType.StoredProcedure;
 
-                SqlCommand Comando = new SqlCommand(query, Conexion);
+                Comando.Parameters.AddWithValue("@id_Posiciones", id_Posicion);
 
-                Comando.Parameters.AddWithValue("@id_Torneo", id_Torneo);
-                Comando.Parameters.AddWithValue("@Fecha", Fecha);
-                Comando.Parameters.AddWithValue("@Equipo_local", Equipo_Local);
-                Comando.Parameters.AddWithValue("@VS", VS);
-                Comando.Parameters.AddWithValue("@Equipo_visitante", Equipo_Visitante);
-                Comando.Parameters.AddWithValue("@Marcador", Marcador);
-                Comando.Parameters.AddWithValue("@Evento_Destacado", Evento_Destacado);
-
+                //ExecuteNonQuery = En Sql Server, nos registra un # 1 cuando el proceso se cumple, cuando no devuelve un 0. Aplicamos eso mismo
                 Retorna = Comando.ExecuteNonQuery();
-
 
             }
             return Retorna;
         }
-        public static List<ClsHistorial> PresentarHistorial()
+        public static int EliminarHistorial(ClsHistorial Historial, int id_Historial) //Ingresamos un int como id
         {
-            List<ClsHistorial> Lista = new List<ClsHistorial>();
-            //Conexion
+            int Retorna = 0;
+
+            //Creamos la conexión con SQL SERVER y por su defecto nuestra base de datos por medio del comando SqlConnectionWHE
             using (SqlConnection Conexion = ClsConexion.GetInstancia().CrearConexion())
             {
-                string query = "SELECT * FROM HISTORIAL"; //Variable ya no con los datos sino con la sintaxis de una consulta general en Sql Server
-                //Comando
-                SqlCommand Comando = new SqlCommand(query, Conexion);
-                //Comando para leer los datos
-                SqlDataReader Reader = Comando.ExecuteReader();
-                //Bucle que nos mostrará todos los datos ingresados en la lista
-                while (Reader.Read())
-                {
-                    //Objeto de classe Torneo + sus atributos
-                    ClsHistorial Historial = new ClsHistorial();
+                //Creamos un comando de Sql que resiva nuestra variable con los datos y nuestro objeto de la clase conexion
+                SqlCommand Comando = new SqlCommand("SP_Eliminar_Datos_Historial", Conexion);
+                Comando.CommandType = CommandType.StoredProcedure;
 
-                    Historial.id_Historial = Reader.GetInt32(0);
-                    Historial.id_Torneo = Reader.GetInt32(1);
-                    Historial.Fecha = Reader.GetDateTime(2);
-                    Historial.Equipo_local = Reader.GetString(3);
-                    Historial.VS = Reader.GetString(4);
-                    Historial.Equipo_visitante = Reader.GetString(5);
-                    Historial.Marcador = Reader.GetString(6);
-                    Historial.Evento_Destacado = Reader.GetString(7);
-                    Lista.Add(Historial);
+                Comando.Parameters.AddWithValue("@id_Posiciones", id_Historial);
 
-                }
-                //Cerramos la conexion
-                Conexion.Close();
-                //Devolvemos la lista
-                return Lista;
+                //ExecuteNonQuery = En Sql Server, nos registra un # 1 cuando el proceso se cumple, cuando no devuelve un 0. Aplicamos eso mismo
+                Retorna = Comando.ExecuteNonQuery();
             }
+            return Retorna;
         }
-        
     }
 }

@@ -21,8 +21,7 @@ namespace Proyecto_Final_BD.Presentacion
             dgvTorneo.Font = new Font("SimSun", 9);
             CargarCategoria();
         }
-        SqlConnection Conexion = new SqlConnection("server=DESKTOP-K54DEQR\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
-        //SqlConnection Conexion = new SqlConnection("server=DESKTOP-63RH14Q\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
+        SqlConnection Conexion = new SqlConnection("server=DESKTOP-63RH14Q\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
         public void refreshPantalla()
         {
             dgvTorneo.DataSource = ClsProcedimientos.PresentarRegistroTorneo();
@@ -101,7 +100,7 @@ namespace Proyecto_Final_BD.Presentacion
             cboBox_Categoria_Torneo.Items.Clear();
             Conexion.Open();
 
-            SqlCommand Comando = new SqlCommand("SELECT * FROM CATEGORIAS", Conexion);
+            SqlCommand Comando = new SqlCommand("SP_Presentar_Datos_Categorias", Conexion);
 
             SqlDataReader Leer = Comando.ExecuteReader();
             while (Leer.Read())

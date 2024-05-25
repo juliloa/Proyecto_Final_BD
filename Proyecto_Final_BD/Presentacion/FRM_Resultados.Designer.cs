@@ -73,7 +73,6 @@
             this.cbo_Id_Torneo.Name = "cbo_Id_Torneo";
             this.cbo_Id_Torneo.Size = new System.Drawing.Size(196, 32);
             this.cbo_Id_Torneo.TabIndex = 156;
-            this.cbo_Id_Torneo.SelectedIndexChanged += new System.EventHandler(this.cbo_Id_Torneo_SelectedIndexChanged);
             // 
             // lbl_Equipo_Visitante
             // 
@@ -185,7 +184,7 @@
             this.Cbo_id_Programacion.Name = "Cbo_id_Programacion";
             this.Cbo_id_Programacion.Size = new System.Drawing.Size(196, 32);
             this.Cbo_id_Programacion.TabIndex = 149;
-            
+            this.Cbo_id_Programacion.SelectedIndexChanged += new System.EventHandler(this.Cbo_id_Programacion_SelectedIndexChanged);
             // 
             // btnLimpiarResultados
             // 
