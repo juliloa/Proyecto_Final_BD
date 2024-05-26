@@ -35,8 +35,6 @@
             this.lbl_NombreEquipo = new System.Windows.Forms.Label();
             this.cbo_CargarCategoria = new System.Windows.Forms.ComboBox();
             this.cbo_CargarTorneo = new System.Windows.Forms.ComboBox();
-            this.txt_Patrocinadores_Equipo = new System.Windows.Forms.TextBox();
-            this.lbl_Patrocinadores = new System.Windows.Forms.Label();
             this.btnLimpiarEquipos = new System.Windows.Forms.Button();
             this.btnEliminarEquipos = new System.Windows.Forms.Button();
             this.lbl_EquipoVisitan = new System.Windows.Forms.Label();
@@ -65,7 +63,7 @@
             this.lbl_LlamarCategoria.AutoSize = true;
             this.lbl_LlamarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbl_LlamarCategoria.Font = new System.Drawing.Font("SimSun", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_LlamarCategoria.Location = new System.Drawing.Point(11, 387);
+            this.lbl_LlamarCategoria.Location = new System.Drawing.Point(11, 343);
             this.lbl_LlamarCategoria.Name = "lbl_LlamarCategoria";
             this.lbl_LlamarCategoria.Size = new System.Drawing.Size(138, 26);
             this.lbl_LlamarCategoria.TabIndex = 144;
@@ -98,7 +96,7 @@
             // 
             this.cbo_CargarCategoria.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_CargarCategoria.FormattingEnabled = true;
-            this.cbo_CargarCategoria.Location = new System.Drawing.Point(233, 386);
+            this.cbo_CargarCategoria.Location = new System.Drawing.Point(233, 342);
             this.cbo_CargarCategoria.Name = "cbo_CargarCategoria";
             this.cbo_CargarCategoria.Size = new System.Drawing.Size(192, 32);
             this.cbo_CargarCategoria.TabIndex = 142;
@@ -111,28 +109,6 @@
             this.cbo_CargarTorneo.Name = "cbo_CargarTorneo";
             this.cbo_CargarTorneo.Size = new System.Drawing.Size(192, 32);
             this.cbo_CargarTorneo.TabIndex = 141;
-            // 
-            // txt_Patrocinadores_Equipo
-            // 
-            this.txt_Patrocinadores_Equipo.BackColor = System.Drawing.Color.Snow;
-            this.txt_Patrocinadores_Equipo.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Patrocinadores_Equipo.Location = new System.Drawing.Point(234, 322);
-            this.txt_Patrocinadores_Equipo.Name = "txt_Patrocinadores_Equipo";
-            this.txt_Patrocinadores_Equipo.Size = new System.Drawing.Size(191, 35);
-            this.txt_Patrocinadores_Equipo.TabIndex = 130;
-            this.txt_Patrocinadores_Equipo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lbl_Patrocinadores
-            // 
-            this.lbl_Patrocinadores.AutoSize = true;
-            this.lbl_Patrocinadores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_Patrocinadores.Font = new System.Drawing.Font("SimSun", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Patrocinadores.Location = new System.Drawing.Point(12, 324);
-            this.lbl_Patrocinadores.Name = "lbl_Patrocinadores";
-            this.lbl_Patrocinadores.Size = new System.Drawing.Size(208, 26);
-            this.lbl_Patrocinadores.TabIndex = 140;
-            this.lbl_Patrocinadores.Text = "Patrocinadores";
-            this.lbl_Patrocinadores.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnLimpiarEquipos
             // 
@@ -253,9 +229,9 @@
             this.lbl_TorneoPrograma.Font = new System.Drawing.Font("SimSun", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TorneoPrograma.Location = new System.Drawing.Point(12, 139);
             this.lbl_TorneoPrograma.Name = "lbl_TorneoPrograma";
-            this.lbl_TorneoPrograma.Size = new System.Drawing.Size(138, 26);
+            this.lbl_TorneoPrograma.Size = new System.Drawing.Size(96, 26);
             this.lbl_TorneoPrograma.TabIndex = 132;
-            this.lbl_TorneoPrograma.Text = "ID Torneo";
+            this.lbl_TorneoPrograma.Text = "Torneo";
             this.lbl_TorneoPrograma.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lbl_Equipo
@@ -281,8 +257,6 @@
             this.Controls.Add(this.lbl_NombreEquipo);
             this.Controls.Add(this.cbo_CargarCategoria);
             this.Controls.Add(this.cbo_CargarTorneo);
-            this.Controls.Add(this.txt_Patrocinadores_Equipo);
-            this.Controls.Add(this.lbl_Patrocinadores);
             this.Controls.Add(this.btnLimpiarEquipos);
             this.Controls.Add(this.btnEliminarEquipos);
             this.Controls.Add(this.lbl_EquipoVisitan);
@@ -310,8 +284,6 @@
         private System.Windows.Forms.Label lbl_NombreEquipo;
         private System.Windows.Forms.ComboBox cbo_CargarCategoria;
         private System.Windows.Forms.ComboBox cbo_CargarTorneo;
-        private System.Windows.Forms.TextBox txt_Patrocinadores_Equipo;
-        private System.Windows.Forms.Label lbl_Patrocinadores;
         private System.Windows.Forms.Button btnLimpiarEquipos;
         private System.Windows.Forms.Button btnEliminarEquipos;
         private System.Windows.Forms.Label lbl_EquipoVisitan;

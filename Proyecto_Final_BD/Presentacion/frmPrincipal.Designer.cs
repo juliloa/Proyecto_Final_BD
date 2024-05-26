@@ -47,9 +47,9 @@
             // 
             this.panelcontenedor.BackColor = System.Drawing.Color.LightCyan;
             this.panelcontenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelcontenedor.Location = new System.Drawing.Point(0, 135);
+            this.panelcontenedor.Location = new System.Drawing.Point(0, 137);
             this.panelcontenedor.Name = "panelcontenedor";
-            this.panelcontenedor.Size = new System.Drawing.Size(1606, 712);
+            this.panelcontenedor.Size = new System.Drawing.Size(1606, 710);
             this.panelcontenedor.TabIndex = 7;
             // 
             // menuStrip1
@@ -66,7 +66,7 @@
             this.Menu_Resultados,
             this.Menu_Posiciones,
             this.Menu_Historial});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 48);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 50);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1606, 87);
             this.menuStrip1.TabIndex = 5;
@@ -81,7 +81,7 @@
             this.Menu_Torneo.IconSize = 50;
             this.Menu_Torneo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Menu_Torneo.Name = "Menu_Torneo";
-            this.Menu_Torneo.Size = new System.Drawing.Size(91, 83);
+            this.Menu_Torneo.Size = new System.Drawing.Size(91, 81);
             this.Menu_Torneo.Text = "Torneo";
             this.Menu_Torneo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Menu_Torneo.Click += new System.EventHandler(this.Menu_Torneo_Click);
@@ -95,7 +95,7 @@
             this.Menu_Equipos.IconSize = 50;
             this.Menu_Equipos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Menu_Equipos.Name = "Menu_Equipos";
-            this.Menu_Equipos.Size = new System.Drawing.Size(113, 83);
+            this.Menu_Equipos.Size = new System.Drawing.Size(113, 81);
             this.Menu_Equipos.Text = " Equipos";
             this.Menu_Equipos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Menu_Equipos.Click += new System.EventHandler(this.Menu_Equipos_Click);
@@ -109,7 +109,7 @@
             this.Menu_Juador.IconSize = 50;
             this.Menu_Juador.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Menu_Juador.Name = "Menu_Juador";
-            this.Menu_Juador.Size = new System.Drawing.Size(102, 83);
+            this.Menu_Juador.Size = new System.Drawing.Size(102, 81);
             this.Menu_Juador.Text = "Jugador";
             this.Menu_Juador.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Menu_Juador.Click += new System.EventHandler(this.Menu_Juador_Click);
@@ -123,7 +123,7 @@
             this.Menu_Programacion.IconSize = 50;
             this.Menu_Programacion.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Menu_Programacion.Name = "Menu_Programacion";
-            this.Menu_Programacion.Size = new System.Drawing.Size(157, 83);
+            this.Menu_Programacion.Size = new System.Drawing.Size(157, 81);
             this.Menu_Programacion.Text = "Programación";
             this.Menu_Programacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Menu_Programacion.Click += new System.EventHandler(this.Menu_Programacion_Click);
@@ -137,7 +137,7 @@
             this.Menu_Resultados.IconSize = 50;
             this.Menu_Resultados.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Menu_Resultados.Name = "Menu_Resultados";
-            this.Menu_Resultados.Size = new System.Drawing.Size(135, 83);
+            this.Menu_Resultados.Size = new System.Drawing.Size(135, 81);
             this.Menu_Resultados.Text = "Resultados";
             this.Menu_Resultados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Menu_Resultados.Click += new System.EventHandler(this.Menu_Resultados_Click);
@@ -151,7 +151,7 @@
             this.Menu_Posiciones.IconSize = 50;
             this.Menu_Posiciones.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Menu_Posiciones.Name = "Menu_Posiciones";
-            this.Menu_Posiciones.Size = new System.Drawing.Size(135, 83);
+            this.Menu_Posiciones.Size = new System.Drawing.Size(135, 81);
             this.Menu_Posiciones.Text = "Posiciones";
             this.Menu_Posiciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Menu_Posiciones.Click += new System.EventHandler(this.Menu_Posiciones_Click);
@@ -165,7 +165,7 @@
             this.Menu_Historial.IconSize = 50;
             this.Menu_Historial.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Menu_Historial.Name = "Menu_Historial";
-            this.Menu_Historial.Size = new System.Drawing.Size(124, 83);
+            this.Menu_Historial.Size = new System.Drawing.Size(124, 81);
             this.Menu_Historial.Text = "Historial";
             this.Menu_Historial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Menu_Historial.Click += new System.EventHandler(this.Menu_Historial_Click);
@@ -179,7 +179,7 @@
             this.sISTEMADEREGISTRODEEVENTOSDEFUTBOLToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1606, 48);
+            this.menuStrip2.Size = new System.Drawing.Size(1606, 50);
             this.menuStrip2.TabIndex = 6;
             this.menuStrip2.Text = "menuStrip2";
             // 

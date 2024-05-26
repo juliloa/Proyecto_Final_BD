@@ -120,7 +120,7 @@ namespace Proyecto_Final_BD.Datos
             return Retorna;
         }
 
-        public static int GuardarJugador(ClsRegistroJugador Jugador, string id_Equipo) //Ingresamos objeto de la clase Registro_Jugador
+        public static int GuardarJugador(ClsRegistroJugador Jugador, string Nombre_Equipo) //Ingresamos objeto de la clase Registro_Jugador
         {
             int Estado = 1;
             int Retorna = 0;
@@ -132,7 +132,7 @@ namespace Proyecto_Final_BD.Datos
                 SqlCommand Comando = new SqlCommand("SP_Registro_Datos_Jugadores", Conexion);
                 Comando.CommandType = CommandType.StoredProcedure;
 
-                Comando.Parameters.AddWithValue("@id_Equipo", id_Equipo);
+                Comando.Parameters.AddWithValue("@Nombre_Equipo", Nombre_Equipo);
                 Comando.Parameters.AddWithValue("@Nombre", Jugador.Nombre);
                 Comando.Parameters.AddWithValue("@Apellido", Jugador.Apellido);
                 Comando.Parameters.AddWithValue("@Documento", Jugador.Documento);
@@ -236,7 +236,7 @@ namespace Proyecto_Final_BD.Datos
             return Retorna;
         }
 
-        public static int GuardarEquipo(ClsRegistroEquipo Equipo, string id_torneo)
+        public static int GuardarEquipo(ClsRegistroEquipo Equipo, string Nombre_Torneo)
         {
             int Estado = 1;
             int Retorna = 0;
@@ -248,11 +248,10 @@ namespace Proyecto_Final_BD.Datos
                 SqlCommand Comando = new SqlCommand("SP_Registro_Datos_Equipos", Conexion);
                 Comando.CommandType = CommandType.StoredProcedure;
 
-                Comando.Parameters.AddWithValue("@id_Torneo", id_torneo);
+                Comando.Parameters.AddWithValue("@Nombre_Torneo", Nombre_Torneo);
                 Comando.Parameters.AddWithValue("@Nombre", Equipo.Nombre);
                 Comando.Parameters.AddWithValue("@Categoria", Equipo.Categoria);
                 Comando.Parameters.AddWithValue("@Cantidad_Jugadores", Equipo.Cantidad_Jugadores);
-                Comando.Parameters.AddWithValue("@Patrocinadores", Equipo.Patrocinadores);
                 Comando.Parameters.AddWithValue("@Estado", Estado);
                 //Comando.Parameters.AddWithValue("@id_Equipo", Equipo.id_Equipo);
 
@@ -291,8 +290,7 @@ namespace Proyecto_Final_BD.Datos
                     Equipo.Nombre = Reader.GetString(2);
                     Equipo.Categoria = Reader.GetString(3);
                     Equipo.Cantidad_Jugadores = Reader.GetInt32(4);
-                    Equipo.Patrocinadores = Reader.GetString(5);
-                    Equipo.Estado = Reader.GetBoolean(6);
+                    Equipo.Estado = Reader.GetBoolean(5);
                     Lista.Add(Equipo);
 
                 }
@@ -319,7 +317,6 @@ namespace Proyecto_Final_BD.Datos
                 Comando.Parameters.AddWithValue("@Nombre", Equipo.Nombre);
                 Comando.Parameters.AddWithValue("@Categoria", Equipo.Categoria);
                 Comando.Parameters.AddWithValue("@Cantidad_Jugadores", Equipo.Cantidad_Jugadores);
-                Comando.Parameters.AddWithValue("@Patrocinadores", Equipo.Patrocinadores);
                 Comando.Parameters.AddWithValue("@Estado", Estado);
                 Comando.Parameters.AddWithValue("@id_Equipo", Equipo.id_Equipo);
 
@@ -358,7 +355,7 @@ namespace Proyecto_Final_BD.Datos
                 SqlCommand Comando = new SqlCommand("SP_REGISTRO_DATOS_PROGRAMACION", Conexion);
                 Comando.CommandType = CommandType.StoredProcedure;
 
-                Comando.Parameters.AddWithValue("@Id_Torneo", id_Torneo);
+                Comando.Parameters.AddWithValue("@id_Torneo", id_Torneo);
                 Comando.Parameters.AddWithValue("@Fecha", Programacion.Fecha);
                 Comando.Parameters.AddWithValue("@Hora", Programacion.Hora);
                 Comando.Parameters.AddWithValue("@Ubicacion", Programacion.Ubicacion);
@@ -453,7 +450,7 @@ namespace Proyecto_Final_BD.Datos
             return Retorna;
         }
 
-        public static int GuardarResultados(ClsResultados Resultados, string id_torneo, string Equipo_local, string Equipo_visitante, string Ganador, string Perdedor, string Empate)
+        public static int GuardarResultados(ClsResultados Resultados, string Nombre_Torneo, string Equipo_local, string Equipo_visitante, string Ganador, string Perdedor, string Empate)
         {
             int Retorna = 0;
 
@@ -463,7 +460,7 @@ namespace Proyecto_Final_BD.Datos
                 SqlCommand Comando = new SqlCommand("SP_REGISTRAR_DATOS_RESULTADOS", Conexion);
                 Comando.CommandType = CommandType.StoredProcedure;
 
-                Comando.Parameters.AddWithValue("@Id_Torneo", id_torneo);
+                Comando.Parameters.AddWithValue("@Nombre_Torneo", Nombre_Torneo);
                 Comando.Parameters.AddWithValue("@Equipo_Local", Equipo_local);
                 Comando.Parameters.AddWithValue("@Equipo_Visitante", Equipo_visitante);
                 Comando.Parameters.AddWithValue("@Marcador", Resultados.Marcador);

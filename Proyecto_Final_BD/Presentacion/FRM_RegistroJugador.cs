@@ -32,7 +32,6 @@ namespace Proyecto_Final_BD.Presentacion
             dgvRegistroJugador.DataSource = ClsProcedimientos.PresentarRegistroJugador();
             dgvRegistroJugador.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
-            txt_Equipo.Enabled = false;
             txt_Id_Jugador.Enabled = false;
         }
 
@@ -63,7 +62,7 @@ namespace Proyecto_Final_BD.Presentacion
                 Jugador.Apellido = txt_ApellidoJugador.Text;
                 Jugador.Documento = txt_DocumentoJugador.Text;
                 Jugador.Edad = Convert.ToInt32(txt_EdadJugador.Text);
-                Jugador.Genero = cbo_Cargar_Equipos.Text;
+                Jugador.Genero = cbo_Genero_Jugador.Text;
                 Jugador.Telefono = txt_TeleJugador.Text;
                 Jugador.Correo = txt_CorreoJugador.Text;
 
@@ -113,7 +112,6 @@ namespace Proyecto_Final_BD.Presentacion
             txt_CorreoJugador.Clear();
             txt_DocumentoJugador.Clear();
             txt_EdadJugador.Clear();
-            txt_Equipo.Clear();
             txt_Id_Jugador.Clear();
             txt_NombreJugador.Clear();
             txt_TeleJugador.Clear();
@@ -154,7 +152,7 @@ namespace Proyecto_Final_BD.Presentacion
                 List<ClsRegistroEquipo> listaTorneos = new List<ClsRegistroEquipo>();
                 while (Lector.Read())
                 {
-                    cbo_Cargar_Equipos.Items.Add(Lector[0].ToString());
+                    cbo_Cargar_Equipos.Items.Add(Lector[2].ToString());
                 }
                 cbo_Cargar_Equipos.Items.Insert(0, "-Seleccione Equipo-");
                 cbo_Cargar_Equipos.SelectedIndex = 0;

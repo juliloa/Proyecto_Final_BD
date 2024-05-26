@@ -13,7 +13,6 @@ namespace Proyecto_Final_BD.Entides
         public string Nombre { get; set; }
         public string Categoria { get; set; }
         public int Cantidad_Jugadores { get; set; }
-        public string Patrocinadores { get; set; }
         public bool Estado { get; set; }
     }
 }

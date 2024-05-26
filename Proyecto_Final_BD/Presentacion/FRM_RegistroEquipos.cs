@@ -60,7 +60,6 @@ namespace Proyecto_Final_BD.Presentacion
                 Equipo.Nombre = txt_Nombre_Equipo.Text;
                 Equipo.Categoria = cbo_CargarCategoria.Text;
                 Equipo.Cantidad_Jugadores = Convert.ToInt32(txt_CantidadJugadores.Text);
-                Equipo.Patrocinadores = txt_Patrocinadores_Equipo.Text;
 
                 if (dgvRegistroEquipos.SelectedRows.Count == 1)
                 {
@@ -117,7 +116,6 @@ namespace Proyecto_Final_BD.Presentacion
         {
             txt_IdEquipo.Clear();
             txt_CantidadJugadores.Clear();
-            txt_Patrocinadores_Equipo.Clear();
             txt_Nombre_Equipo.Clear();
         }
 
@@ -155,7 +153,7 @@ namespace Proyecto_Final_BD.Presentacion
 
                 while (Lector.Read())
                 {
-                    cbo_CargarTorneo.Items.Add(Lector[0].ToString());
+                    cbo_CargarTorneo.Items.Add(Lector[1].ToString());
                 }
                 cbo_CargarTorneo.Items.Insert(0, "-Seleccione Torneo-");
                 cbo_CargarTorneo.SelectedIndex = 0;
@@ -201,7 +199,6 @@ namespace Proyecto_Final_BD.Presentacion
             txt_Nombre_Equipo.Text = dgvRegistroEquipos.SelectedCells[2].Value.ToString();
             cbo_CargarCategoria.Text = dgvRegistroEquipos.SelectedCells[3].Value.ToString();
             txt_CantidadJugadores.Text = dgvRegistroEquipos.SelectedCells[4].Value.ToString();
-            txt_Patrocinadores_Equipo.Text = dgvRegistroEquipos.SelectedCells[5].Value.ToString();
         }
     }
     

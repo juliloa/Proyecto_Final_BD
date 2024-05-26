@@ -19,7 +19,7 @@ namespace Proyecto_Final_BD.Presentacion
         {
             InitializeComponent();
             Dgv_Resultados.Font = new Font("SimSun", 9);
-            CargarPrpgramacion();
+            CargarProgramacion();
             CargarTorneos();
         }
         SqlConnection Conexion = new SqlConnection("server=DESKTOP-63RH14Q\\SQLEXPRESS; database=PRUEBAFINAL; integrated security=true");
@@ -40,7 +40,7 @@ namespace Proyecto_Final_BD.Presentacion
             Dgv_Resultados.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
-        private void CargarPrpgramacion()
+        private void CargarProgramacion()
         {
             try
             {
@@ -61,7 +61,7 @@ namespace Proyecto_Final_BD.Presentacion
                 MessageBox.Show("Error al cargar las Programaciones: " + ex.Message);
             }
             finally
-            {
+            {   
                 if (Conexion != null && Conexion.State == ConnectionState.Open)
                 {
                     Conexion.Close();
@@ -79,7 +79,7 @@ namespace Proyecto_Final_BD.Presentacion
 
                 while (Lector.Read())
                 {
-                    cbo_Id_Torneo.Items.Add(Lector[0].ToString());
+                    cbo_Id_Torneo.Items.Add(Lector[1].ToString());
                 }
                 cbo_Id_Torneo.Items.Insert(0, "-Seleccione Torneo-");
                 cbo_Id_Torneo.SelectedIndex = 0;
@@ -200,6 +200,25 @@ namespace Proyecto_Final_BD.Presentacion
                             {
                                 MessageBox.Show("Error al modificar los datos");
                             }
+                        }
+                        else
+                        {
+                            Resultados.id_Resultado = id;
+
+                            int Resulta = ClsProcedimientos.ModificarResultados(Resultados, cbo_Id_Torneo.Text, lbl_Equipo_Local.Text,
+                            lbl_Equipo_Visitante.Text, lbl_Equipo_Visitante.Text, lbl_Equipo_Local.Text, "");
+
+                            if (Resulta > 0)
+                            {
+                                MessageBox.Show("Datos modificados con éxito");
+
+                            }
+
+                            else
+                            {
+                                MessageBox.Show("Error al modificar los datos");
+                            }
+                            refreshPantalla();
                         }
                     }
                     else
